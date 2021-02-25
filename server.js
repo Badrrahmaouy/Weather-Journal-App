@@ -12,22 +12,20 @@ app.use(bodyParser.json())
 app.use(cors());
 
 app.use(express.static('website'));
-const port = 8000;
+const port = 5500;
 const server = app.listen(port, () => { console.log(`the server is running on port ${port}`)});
 
 const data = [];
 // Get Route
-app.get('/all', getData);
+app.get('/', getData);
 function getData (req, res) {
-    res.send(data);
+    res.send(projectData);
 }
 // Post Route
-app.post('/add', addData);
+app.post('/', addData);
 function addData(req, res) {
-    newEntry = {
-        zipcode = req.body.zip,
-        feelings = req.bpdy.feelings
-    };
-    data.push(newEntry);
-    res.send(data)
+    projectData['date'] = req.body.date;
+    projectData['feelings'] = req.body.feelings;
+    projectData['temp'] = req.body.tem;
+    res.send(projectData)
 }
