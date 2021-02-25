@@ -15,17 +15,16 @@ app.use(express.static('website'));
 const port = 5500;
 const server = app.listen(port, () => { console.log(`the server is running on port ${port}`)});
 
-const data = [];
-// Get Route
-app.get('/', getData);
-function getData (req, res) {
-    res.send(projectData);
-}
 // Post Route
 app.post('/', addData);
 function addData(req, res) {
     projectData['date'] = req.body.date;
     projectData['feelings'] = req.body.feelings;
-    projectData['temp'] = req.body.tem;
+    projectData['temp'] = req.body.temp;
     res.send(projectData)
+}
+// Get Route
+app.get('/all', getData);
+function getData (req, res) {
+    res.send(projectData);
 }

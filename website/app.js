@@ -12,8 +12,9 @@ function makeForecast() {
     getForecast(baseURL, apiKey, zipcode)
     .then(function (data) {
         const date = timeConverter(data.dt);
-        console.log(date);
-        postData('/', {date: date, feelings: feelings, temp: data.main.temp})
+        // console.log(data.main.temp);
+        postData('/', {date: date, feelings: feelings, temp: data.main.temp.toFixed(0)});
+        update();
     })
 }
 /* Function to GET Web API Data*/
@@ -40,7 +41,7 @@ const postData = async (url = '', data = {}) => {
     });
     try {
         const newData = await res.json();
-        console.log(newData);
+        // console.log(newData);
         return newData;
     } catch(error) {
         console.log('error', error);
@@ -51,12 +52,22 @@ const getData = async (url) => {
     const res = await fetch(url);
     try {
         const data = await res.json();
+        // console.log(data);
         return data;
     } catch(error) {
         console.log('error', error);
     }
 }
-
+// function to update interactively the browser
+function update() {
+    getData('/all')
+    .then(function (data) {
+        // console.log(data);
+        document.getElementById('date').innerHTML = data.date;
+        document.getElementById('temp').innerHTML = data.temp;
+        document.getElementById('content').innerHTML = data.feelings;
+    })
+}
 // function to convert unix date from API
 function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
