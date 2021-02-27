@@ -10,18 +10,18 @@ The app queries weather data for the user location (based on ZIP code) from an o
 (Node.js is required to run this web app)  
 To run this web app:  
 1. Install express in the app's main folder  
-        ```bash 
+        ``` 
         npm install express
         ```
 
 2. Install cors and body-parser in the same folder  
-        ```bash
+        ```
         npm install cors
         npm install body-parser
         ```
 
 3. Spin up the server locally  
-        ```bash
+        ```
         node server.js
         ```
 
