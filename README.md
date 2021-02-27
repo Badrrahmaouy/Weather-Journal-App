@@ -9,7 +9,7 @@ The app queries weather data for the user location (based on ZIP code) from an o
 
 (Node.js is required to run this web app)  
 To run this web app:  
-1. Install express in the main folder  
+1. Install express in the app's main folder  
         ```bash 
         npm install express
         ```
