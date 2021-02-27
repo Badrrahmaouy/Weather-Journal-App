@@ -1,6 +1,6 @@
 // Web API base URL and personal key
-let baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = ',us&appid=6ad6f4e238882457dcb737040cf28fcb';
+const baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
+const apiKey = ',us&appid=6ad6f4e238882457dcb737040cf28fcb&units=imperial';
 
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click', makeForecast)
