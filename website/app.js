@@ -59,13 +59,13 @@ const getData = async (url) => {
     }
 }
 // function to update interactively the browser
-function update() {
+function update(data) {
     getData('/all')
     .then(function (data) {
         // console.log(data);
-        document.getElementById('date').innerHTML = data.date;
-        document.getElementById('temp').innerHTML = data.temp;
-        document.getElementById('content').innerHTML = data.feelings;
+        document.getElementById('date').innerHTML = `Today is: ${data.date}`;
+        document.getElementById('temp').innerHTML = `The temperature is: ${data.temp}˚F`;
+        document.getElementById('content').innerHTML = `Today I'm feeling: ${data.feelings}`;
     })
 }
 // function to convert unix date from API
@@ -75,9 +75,6 @@ function timeConverter(UNIX_timestamp) {
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+    var time = date + ' ' + month + ' ' + year + ' ';
     return time;
 }

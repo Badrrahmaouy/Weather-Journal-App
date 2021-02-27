@@ -16,8 +16,8 @@ body{
     font-family: 'Oswald', sans-serif;
 }
 
-.holder{
-
+.holder.entry{
+    text-align: center;
 }
 
 .entry{
@@ -25,19 +25,12 @@ body{
 }
 
 #entryHolder{
-
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
 }
 
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
+#date, #temp{
+    border-right: 1px solid #f0d43a;
 }
 
 .headline {
@@ -45,17 +38,13 @@ body{
 }
 
 #sponsorship {
-    font-size: 15px;
+    font-size: 8px;
 }
 
 #site-logo {
-    width: 10%;
-    position: fixed;
-    top: 15px;
-}
-
-.title{
-
+    width: 8%;
+    position: relative;
+    top: 8px;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
