@@ -1,4 +1,4 @@
-# weather Journal App
+# Weather Journal App
 
 ## Overview
 
@@ -7,16 +7,16 @@ The app queries weather data for the user location (based on ZIP code) from an o
 
 ## Instructions
 
-(Node.js is required to run this web app)
-To run this web app:
-    1. Install express in the main folder 
+(Node.js is required to run this web app)  
+To run this web app:  
+    1. Install express in the main folder  
         npm install express
-    2. Install cors and body-parser in the same folder
+    2. Install cors and body-parser in the same folder  
         npm install cors
         npm install body-parser
-    3. Spin up the server locally
+    3. Spin up the server locally  
         node server.js
-    4. Open the localhost link on the browser with the port number where the local server is running 
+    4. Open the localhost link on the browser with the port number where the local server is running   
         localhost:5500
 
     
